@@ -21,8 +21,8 @@ body{
 .modal-container{
     align-items: center;
     background-color: white;
-    height: 630px;
-    width: 420px;
+    height: 540px;
+    width: 360px;
     margin: auto;
     border-radius: 30px;
 }
