@@ -42,18 +42,21 @@ taskSection.addEventListener("click",function(){
         //editing the input field
         taskId.addEventListener("click",function(){
             taskId.setAttribute("contenteditable","true");
-            id=taskId.getAttribute('id');
-            input=taskId.value;
             //updating local storage
-            for(let i=0;i<allTask.length;i++){
-                if(allTask[i].id==id){
-                    allTask[i].checkSelected=squareBtn.classList[2];
-                    allTask[i].text=input;
-                    localStorage.setItem('alltask-list',JSON.stringify(allTask))
+            taskId.addEventListener("blur",function(){
+                id=taskId.getAttribute('id');
+                input=taskId.value;
+                for(let i=0;i<allTask.length;i++){
+                    if(allTask[i].id==id){
+                        allTask[i].checkSelected=squareBtn.classList[2];
+                        allTask[i].text=input;
+                        localStorage.setItem('alltask-list',JSON.stringify(allTask))
+                    }
+                    
+        
                 }
-                
-    
-            }
+            })
+            
         })
         //sqaure box btn
         squareBtn.addEventListener("click",function(){
